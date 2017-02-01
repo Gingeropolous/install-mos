@@ -20,10 +20,27 @@ pkg-config \
 libboost-all-dev \
 libevent-dev \
 libunbound-dev \
-screen
+screen \
+apache2
 
+sudo mkdir /var/www/home
+sudo mkdir /var/www/home/public_html
+sudo mkdir /var/www/home/logs
 
-echo "Monerodo Base System Installed"
+sudo cp conf_files/index.html /var/www/home/public_html/
+sudo cp conf_files/monerodo_logo.png /var/www/home/public_html/
+
+### The below forces the system to use ipv6. Should make optional at some point. Probably requires a reboot.
+sudo cat sysctl.add >> /etc/sysctl.conf
+sudo sysctl -p
+echo 'blacklist ipv6' | sudo tee -a '/etc/modprobe.d/blacklist.local' >/dev/null 
+
+cd ~/
+git clone https://github.com/Gingeropolous/monerodo.git
+
+echo "BASE" >> ~/.monerodo/install.log
+
+echo "Monerodo Base System Installed. Press return to continue. You should probably reboot."
 read goback
 
-cd
+cd ~/
