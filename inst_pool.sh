@@ -19,6 +19,10 @@ sudo mkdir /var/www/pool
 sudo mkdir /var/www/pool/logs
 sudo cp -r website-example/ /var/www/pool/public_html
 
+cd ~/install-mos
+sudo cp conf_files/pool.conf /etc/apache2/sites-available/
+sudo a2ensite /etc/apache2/sites-available/pool.conf
+
 echo "POOL" >> ~/.monerodo/install.log
 
 echo "Your pool server has been installed. For further configurations you'll need to use the Monerodo OS"
