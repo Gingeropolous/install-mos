@@ -24,31 +24,14 @@ echo "Please install these components as described on the AMD site, or this scri
 echo "Have you downloaded the files? (y/n)"
 read fdload
 case "$fdload" in
-	*) echo "Well then not much good can come of anything on this page" ;;
-	y)
-echo "Do you want this script to attempt to install? (y/n)"
-read scrinstall
-case "$scrinstall" in
-	*) echo "Well good on yah for doing it yourself!" ;;
 	y)
 cd ~/Downloads
 tar xf amdgpu-pro*.xz
 cd amdgpu-pro*
 sudo ./amdgpu-pro-install -y 
 
-clear
 
 echo "Now its time to reboot! Reboot now?"
-read raboot
-case "$raboot" in
-	y) sudo reboot
-	echo "Just wait for it to reboot"
-	read wait ;;
-	*) echo "OK then, I guess we'll just twiddle our thumbs" ;;
-esac
-;;
-esac
 ;;
 esac
 
-clear

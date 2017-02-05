@@ -9,22 +9,13 @@ echo "All right! Lets get this SDK and SDL libraries installed. Just do all the 
 echo "Have you downloaded the files? (y/n)"
 read fdload
 case "$fdload" in
-	*) echo "Well then not much good can come of anything on this page" ;;
 	y)
 cd ~/Downloads
 tar -vxjf AMD-APP-SDKInstaller*.bz2
-sudo ./AMD-APP-SDKInstaller*.sh
+sudo ./AMD-APP-SDK*.sh
 clear
-
-echo "Now its time to reboot! Reboot now?"
-read raboot
-case "$raboot" in
-	y) sudo reboot
-	echo "Just wait for it to reboot"
-	read wait ;;
-	*) echo "OK then, I guess we'll just twiddle our thumbs" ;;
-esac
+echo "Now its time to reboot! Press enter to continue"
+read goback
 ;;
 esac
 
-clear
