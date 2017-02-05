@@ -4,7 +4,7 @@
 
 cd ~
 
-echo "All right! Lets get this SDK thing installed. Just do all the default options."
+echo "All right! Lets get this SDK and SDL libraries installed. Just do all the default options."
 
 echo "Have you downloaded the files? (y/n)"
 read fdload

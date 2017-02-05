@@ -12,6 +12,10 @@ git clone https://github.com/genesismining/sgminer-gm.git
 
 cd sgminer-gm
 
+mkdir ~/Downloads/AMDSDL
+unzip ~/Downloads/ADL_SDK_V*.zip -d ~/Downloads/AMDSDL
+cp ~/Downloads/AMDSL/include/*.h ADL_SDK/
+
 git submodule init
 git submodule update
 autoreconf -i

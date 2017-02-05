@@ -12,7 +12,7 @@ mkdir .monerodo/wallets
 
 # Install UBUNTU packages. Blessed are the package maintainers
 
-sudo apt-get install \
+sudo apt-get install -y \
 openssh-server \
 fail2ban \
 git \
