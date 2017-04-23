@@ -3,7 +3,7 @@
 
 now=$(date +"%m_%d_%Y")
 
-cd /home/$USER/monero_files/
+cd /home/$USER/.monerodo/monero_files
 mkdir monero_$now
 cd monero_$now
 
@@ -14,6 +14,7 @@ tar -xjvf linux64
 # Copy binaries to /bin
 #Restart service to use new binaries
 
+cd monero*
 sudo cp monerod /bin/
 sudo cp monero-wallet-cli /bin/
 sudo cp monero-wallet-rpc /bin/
