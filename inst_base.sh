@@ -37,7 +37,7 @@ sudo cp conf_files/monerodo_logo.png /var/www/home/public_html/
 sudo cp conf_files/home.conf /etc/apache2/sites-available/
 sudo a2ensite /etc/apache2/sites-available/home.conf
 
-### The below forces the system to use ipv6. Should make optional at some point. Probably requires a reboot.
+### The below forces the system to use ipv4. Should make optional at some point. Probably requires a reboot.
 
 sudo cat sysctl.add >> /etc/sysctl.conf
 sudo sysctl -p
@@ -47,6 +47,20 @@ echo 'blacklist ipv6' | sudo tee -a '/etc/modprobe.d/blacklist.local' >/dev/null
 
 cd ~/
 git clone https://github.com/Gingeropolous/monerodo.git
+
+
+# Lets create a mos user so all the systemd scripts just work
+# This should probably come earlier and then mos specific shit is installed as that user in the mos users home
+
+echo "The Monerodo OS creates a new user called mos. Please prepare to give the new mos user a password.
+echo "Press enter to continue"
+read continue
+clear
+
+sudo adduser mos
+
+sudo usermod -aG sudo mos
+
 
 echo "BASE" >> ~/.monerodo/install.log
 
