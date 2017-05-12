@@ -10,6 +10,9 @@ mkdir .monerodo
 mkdir .monerodo/monero_files
 mkdir .monerodo/wallets
 
+sudo mkdir /opt/mos/
+sudo mkdir /opt/mos/scripts
+
 # Install UBUNTU packages. Blessed are the package maintainers
 
 sudo apt-get install -y \
@@ -24,6 +27,9 @@ libevent-dev \
 libunbound-dev \
 screen \
 apache2
+
+sudo ufw allow ssh
+sudo ufw default deny
 
 # Lets make a website, eh? 
 
@@ -61,6 +67,7 @@ sudo adduser mos
 
 sudo usermod -aG sudo mos
 
+sudo mkdir /home/mos/.monerodo
 
 echo "BASE" >> ~/.monerodo/install.log
 

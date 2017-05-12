@@ -1,0 +1,15 @@
+[Unit]
+Description=Monero AMD miner
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=~
+Restart=always
+
+ExecStart=/opt/mos/scripts/amd_miner.sh
+
+[Install]
+WantedBy=multi-user.target
+
