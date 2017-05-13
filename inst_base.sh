@@ -68,6 +68,31 @@ sudo adduser mos
 sudo usermod -aG sudo mos
 
 sudo mkdir /home/mos/.monerodo
+sudo chown www-data /home/mos/.monerodo/
+
+now=$(date +"%m_%d_%Y")
+
+cd /home/$USER/.monerodo/monero_files
+mv monero monero_$now
+mkdir monero
+cd monero
+
+rm linux64*
+wget https://downloads.getmonero.org/linux64
+tar -xjvf linux64
+
+# Copy binaries to /bin
+#Restart service to use new binaries
+
+cd monero*
+sudo cp monerod /bin/
+sudo cp monero-wallet-cli /bin/
+sudo cp monero-wallet-rpc /bin/
+sudo cp monero-blockchain-export /bin/ 
+sudo cp monero-blockchain-import /bin/
+sudo cp monero-utils-deserialize /bin/
+
+echo "MONERO" >> ~/.monerodo/install.log
 
 echo "BASE" >> ~/.monerodo/install.log
 
